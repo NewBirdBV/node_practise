@@ -1,0 +1,15 @@
+#chat {
+    display: none;
+}
+
+.annoucement {
+    background: #DDD;
+}
+
+.text {
+    background: lightblue;
+}
+
+.confirmed::after {
+    content: '✅'
+}

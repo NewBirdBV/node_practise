@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebSocket mousemove test</title>
+    <script>
+        window.onload = function () {
+            const ws = new WebSocket('ws://localhost:3000');
+            ws.onopen = function () {
+                document.onmousemove = function (ev) {
+                    ws.send(JSON.stringify({ x: ev.clientX, y: ev.clientY }));
+                }
+            }
+            let initialized = false;
+            ws.onmessage = function (ev) {
+                const data = JSON.parse(ev.data);
+                if (!initialized) {
+                    initialized = true;
+                    for (let id in data) {
+                        move(id, data[id]);
+                    }
+                } else {
+                    if (data.type === 'disconnect') {
+                        remove(data.id);
+                    } else {
+                        move(data.id, data.pos);
+                    }
+                }
+            }
+        }
+        function move(id, pos) {
+            let cursor = document.getElementById(`cursor-${id}`);
+            if (!cursor) {
+                cursor = document.createElement('img');
+                cursor.id = `cursor-${id}`;
+                cursor.src = '/cursor.png';
+                cursor.style.position = 'absolute';
+                document.body.appendChild(cursor);
+            }
+            cursor.style.left = pos.x + 'px';
+            cursor.style.top = pos.y + 'px';
+        }
+        function remove(id) {
+            document.body.removeChild(document.getElementById(`cursor-${id}`));
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

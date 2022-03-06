@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebSocket echo test</title>
+    <script>
+        let lastMsg = '';
+        window.onload = function () {
+            const ws = new WebSocket('ws://localhost:3000');
+            ws.onopen = function () {
+                ping();
+            }
+            ws.onmessage = function (ev) {
+                console.log(`got ${ev.data}`);
+                document.getElementById('test').innerHTML = new Date() - lastMsg;
+                ping();
+            }
+
+            function ping() {
+                lastMsg = new Date() - 0;
+                ws.send('ping');
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Echo</h1>
+<h2><span id="test"></span>ms</h2>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-12-17T09:08:41.970Z",
+    "end": "2021-12-17T09:08:41.973Z",
+    "duration": 3
+  },
+  "tests": [
+    {
+      "title": "should return add result",
+      "fullTitle": "add should return add result",
+      "file": "/Users/dxf/my_workspace/node_practise/try-mocha/test/index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should return number",
+      "fullTitle": "add should return number",
+      "file": "/Users/dxf/my_workspace/node_practise/try-mocha/test/index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "readFile should be ok",
+      "fullTitle": "readFile readFile should be ok",
+      "file": "/Users/dxf/my_workspace/node_practise/try-mocha/test/index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [],
+  "passes": [
+    {
+      "title": "should return add result",
+      "fullTitle": "add should return add result",
+      "file": "/Users/dxf/my_workspace/node_practise/try-mocha/test/index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should return number",
+      "fullTitle": "add should return number",
+      "file": "/Users/dxf/my_workspace/node_practise/try-mocha/test/index.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "readFile should be ok",
+      "fullTitle": "readFile readFile should be ok",
+      "file": "/Users/dxf/my_workspace/node_practise/try-mocha/test/index.test.js",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h2>Hello world</h2>
+<form action="https://www.baidu.com" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileName"/>
+    <button type="submit">Send file</button>
+</form>
+<script>
+    window.top.postMessage('this is a message from localhost', 'https://www.baidu.com');
+    window.onmessage = function (e) {
+        console.log(e);
+    }
+</script>
+</body>
+</html>
